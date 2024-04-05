@@ -20,7 +20,9 @@ const numbers = [50, 60, 70]
 
 // forEach- Undefined bo nie tworzy nowej tablicy 
 console.log(numbers.forEach(el => el))
-// użycie forEach
+
+// użycie forEach - gdy chcemy klkniąc w btn na stronie 
+// Jeśli potrzebujemy po prostu literować tablicę, forEach jest dobrym wyborem.
 const btn = document.querySelector('.btn')
 const btn2 =document.querySelector('.btn2')
 
@@ -37,6 +39,23 @@ btn2.addEventListener('click', clickTwo)
 // map - zwraca nową tablicę 
 console.log(numbers.map(el => el * 2))
 
+
 console.log('---')
+
+// 3. Funkcja zwykła i funkcja strzałkowa 
+
+// zwykła posiada argumenty a strzałkowa NIE POSIADA
+// W zwykłej funkcji będziemy mieć wynik a w strzałkowej: ReferenceError: arguments is not defined
+function yourNumber () {
+    console.log(arguments)
+}
+
+yourNumber(1, 2, 3)
+
+const yourNumberTwo = () => {
+    console.log(arguments)
+}
+
+yourNumberTwo(1, 2, 3)
 
 

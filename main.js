@@ -125,7 +125,8 @@ console.log(sportDelete)
 
 
 // 7. callback 
-//  Callbacki są często używane w operacjach asynchronicznych, gdy dana funkcja już zakończyła się wtedy funkcja asynchroniczna jest odpalana 
+//  Callbacki jak skońćzysz cos robic to uruchom kolejną funkcję 
+// są często używane w operacjach asynchronicznych, gdy dana funkcja już zakończyła się wtedy funkcja asynchroniczna jest odpalana 
 function greate(yourName, callback) {
     console.log(`Hej, co tam słychać ${yourName}`)
     callback()

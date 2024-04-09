@@ -125,7 +125,7 @@ console.log(sportDelete)
 
 
 // 7. callback 
-//  Callbacki jak skońćzysz cos robic to uruchom kolejną funkcję 
+//  Callbacki jak skończysz cos robic to uruchom kolejną funkcję 
 // są często używane w operacjach asynchronicznych, gdy dana funkcja już zakończyła się wtedy funkcja asynchroniczna jest odpalana 
 function greate(yourName, callback) {
     console.log(`Hej, co tam słychać ${yourName}`)
@@ -138,4 +138,37 @@ function greate(yourName, callback) {
 
 greate('Tomek', goodbye)
 
+// 8. Promise - obietnica - jeżeli coś wykona się to kolejna funkcja zostanie odpalona
+// asynchroniczność => Promise 
+// Czym różni się promise od callbacka => zapisem, mamy większy porządek: mamy resolve, rejected (then i catch)
 
+const validateDate = () => {
+    return new Promise ((resolve, rejected) => {
+        setTimeout(() => {
+            console.log('Walidacja danych')
+            resolve()
+        },100)
+    }) 
+}
+
+const regiserUser = () => {
+    return new Promise((resolve, rejected) => {
+        setTimeout(() => {
+            console.log('Rejestracja użytkownika')
+            resolve()
+        }, 300)
+    })
+}
+
+const saveUser = () => {
+    return new Promise ((resolve, rejected) => {
+        setTimeout(() => {
+            console.log('Zapis użytkownika')
+            resolve()
+        }, 150)
+    })
+}
+
+validateDate()
+.then(regiserUser)
+.then(saveUser)
